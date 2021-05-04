@@ -46,8 +46,9 @@
             this.x = event.clientX;
             this.y = event.clientY;
           },
-          showAlert2: function () {
-            alert("Show Alert2 with enter modifier!");
+          showAlert2: function (event) {
+            //alert("Show Alert2 with enter modifier!");
+            alert(event.target.value);
           },
         },
       });
