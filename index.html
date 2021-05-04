@@ -15,5 +15,18 @@
       <p>{{ description }}</p>
     </div>
   </body>
-  <script></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        title: "Hello world | Vue.js ",
+        description: "Start now",
+      },
+      methods: {
+        changeTitle: function (event) {
+          this.description = event.target.value;
+        },
+      },
+    });
+  </script>
 </html>
