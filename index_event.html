@@ -20,6 +20,8 @@
         Coordinations: {{x}},{{y}}
         <span v-on:mousemove.stop>Secret Area</span>
       </p>
+
+      <input type="text" v-on:keyup.enter.space="showAlert2" />
     </div>
     <script>
       new Vue({
@@ -43,6 +45,9 @@
             this.counter += step;
             this.x = event.clientX;
             this.y = event.clientY;
+          },
+          showAlert2: function () {
+            alert("Show Alert2 with enter modifier!");
           },
         },
       });
