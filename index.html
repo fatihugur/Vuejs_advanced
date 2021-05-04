@@ -9,9 +9,10 @@
   </head>
   <body>
     <div id="app">
-      <h1>{{ title }}</h1>
+      <h1 v-once>{{ title }}</h1>
       <hr />
       <input type="text" v-on:input="changeTitle" />
+      <p>{{title}}</p>
       <p>{{ description }}</p>
       <p>{{ hello() }} <a v-bind:href="link" target="_blank">Link</a></p>
     </div>
@@ -32,7 +33,8 @@
         hello: function () {
           //return "Hello Fatih";
           //return this.title;
-          return this.title + " " + this.title_2;
+          //return this.title + " " + this.title_2;
+          return (this.title = "Hello welcome our new Vue.js courses!");
         },
       },
     });
