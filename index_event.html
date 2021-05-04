@@ -16,7 +16,10 @@
       <!-- same work with function-->
       <button v-on:click="increaseCounter(3,$event)">Add with function</button>
       <p>{{ counter }}</p>
-      <p v-on:mousemove="updateCoords(2, $event)">Coordinations: {{x}},{{y}}</p>
+      <p v-on:mousemove="updateCoords(2, $event)">
+        Coordinations: {{x}},{{y}}
+        <span v-on:mousemove.stop>Secret Area</span>
+      </p>
     </div>
     <script>
       new Vue({
