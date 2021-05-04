@@ -9,12 +9,14 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="showAlert">Click Button > Show Alert</button>
+      <button v-on:click="showAlert('Welcome Fatih')">
+        Click Button > Show Alert
+      </button>
       <button v-on:click="counter++">Add</button>
       <!-- same work with function-->
-      <button v-on:click="increaseCounter">Add with function</button>
+      <button v-on:click="increaseCounter(3,$event)">Add with function</button>
       <p>{{ counter }}</p>
-      <p v-on:mousemove="updateCoords">Coordinations: {{x}},{{y}}</p>
+      <p v-on:mousemove="updateCoords(2, $event)">Coordinations: {{x}},{{y}}</p>
     </div>
     <script>
       new Vue({
@@ -25,14 +27,17 @@
           y: 0,
         },
         methods: {
-          showAlert: function () {
-            alert();
+          showAlert: function (name) {
+            alert(name);
           },
 
-          increaseCounter: function () {
-            this.counter++;
+          increaseCounter: function (step) {
+            //this.counter++;
+            this.counter += step;
+            //this.counter = this.counter + step;
           },
-          updateCoords: function (event) {
+          updateCoords: function (step, event) {
+            this.counter += step;
             this.x = event.clientX;
             this.y = event.clientY;
           },
