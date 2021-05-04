@@ -9,14 +9,28 @@
   </head>
   <body>
     <div id="app">
-      <button></button>
+      <button v-on:click="showAlert">Click Button > Show Alert</button>
+      <button v-on:click="counter++">Add</button>
+      <!-- same work with function-->
+      <button v-on:click="increaseCounter">Add with function</button>
+      <p>{{ counter }}</p>
     </div>
     <script>
       new Vue({
         el: "#app",
-        data: {},
+        data: {
+          counter: 0,
+        },
+        methods: {
+          showAlert: function () {
+            alert();
+          },
+
+          increaseCounter: function () {
+            this.counter++;
+          },
+        },
       });
-      alert();
     </script>
   </body>
 </html>
