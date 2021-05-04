@@ -15,6 +15,7 @@
       <p>{{title}}</p>
       <p>{{ description }}</p>
       <p>{{ hello() }} <a v-bind:href="link" target="_blank">Link</a></p>
+      <p>{{ blogLink }}</p>
     </div>
   </body>
   <script>
@@ -25,6 +26,7 @@
         description: "Start now",
         title_2: "Welcome our page",
         link: "https://vuejs.org/",
+        blogLink: "<a href='http://vuejsegitim.com'>Link Blog </a>",
       },
       methods: {
         changeTitle: function (event) {
