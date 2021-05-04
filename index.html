@@ -17,28 +17,28 @@
       <p>{{ hello() }} <a v-bind:href="link" target="_blank">Link</a></p>
       <p v-html="blogLink"></p>
     </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          title: "Hello world | Vue.js ",
+          description: "Start now",
+          title_2: "Welcome our page",
+          link: "https://vuejs.org/",
+          blogLink: "<a href='http://vuejsegitim.com'>Link Blog </a>", //bu haliyle yazdırmaz
+        },
+        methods: {
+          changeTitle: function (event) {
+            this.description = event.target.value;
+          },
+          hello: function () {
+            //return "Hello Fatih";
+            //return this.title;
+            //return this.title + " " + this.title_2;
+            return (this.title = "Hello welcome our new Vue.js courses!");
+          },
+        },
+      });
+    </script>
   </body>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        title: "Hello world | Vue.js ",
-        description: "Start now",
-        title_2: "Welcome our page",
-        link: "https://vuejs.org/",
-        blogLink: "<a href='http://vuejsegitim.com'>Link Blog </a>", //bu haliyle yazdırmaz
-      },
-      methods: {
-        changeTitle: function (event) {
-          this.description = event.target.value;
-        },
-        hello: function () {
-          //return "Hello Fatih";
-          //return this.title;
-          //return this.title + " " + this.title_2;
-          return (this.title = "Hello welcome our new Vue.js courses!");
-        },
-      },
-    });
-  </script>
 </html>

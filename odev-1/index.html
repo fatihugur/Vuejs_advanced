@@ -26,29 +26,28 @@
         <input type="text" v-on:input="changeAge" />
       </div>
     </div>
+    <script>
+      new Vue({
+        el: "#exercise",
+        data: {
+          name: "Fatih Ugur",
+          age: 44,
+          linkFoto:
+            "https://cdn.pixabay.com/photo/2015/11/28/20/30/camera-1067853_1280.jpg",
+        },
+
+        methods: {
+          randomNummer: function (event) {
+            return Math.random(0, 1);
+          },
+          changeName: function (event) {
+            this.name = event.target.value;
+          },
+          changeAge: function (event) {
+            this.age = event.target.value;
+          },
+        },
+      });
+    </script>
   </body>
-
-  <script>
-    new Vue({
-      el: "#exercise",
-      data: {
-        name: "Fatih Ugur",
-        age: 44,
-        linkFoto:
-          "https://cdn.pixabay.com/photo/2015/11/28/20/30/camera-1067853_1280.jpg",
-      },
-
-      methods: {
-        randomNummer: function (event) {
-          return Math.random(0, 1);
-        },
-        changeName: function (event) {
-          this.name = event.target.value;
-        },
-        changeAge: function (event) {
-          this.age = event.target.value;
-        },
-      },
-    });
-  </script>
 </html>
