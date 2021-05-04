@@ -13,7 +13,7 @@
       <hr />
       <input type="text" v-on:input="changeTitle" />
       <p>{{ description }}</p>
-      <p>{{ hello() }}</p>
+      <p>{{ hello() }} <a v-bind:href="link" target="_blank">Link</a></p>
     </div>
   </body>
   <script>
@@ -22,6 +22,8 @@
       data: {
         title: "Hello world | Vue.js ",
         description: "Start now",
+        title_2: "Welcome our page",
+        link: "https://vuejs.org/",
       },
       methods: {
         changeTitle: function (event) {
@@ -29,7 +31,8 @@
         },
         hello: function () {
           //return "Hello Fatih";
-          return this.title;
+          //return this.title;
+          return this.title + " " + this.title_2;
         },
       },
     });
