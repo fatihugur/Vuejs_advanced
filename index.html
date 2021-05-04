@@ -13,6 +13,7 @@
       <hr />
       <input type="text" v-on:input="changeTitle" />
       <p>{{ description }}</p>
+      <p>{{ hello() }}</p>
     </div>
   </body>
   <script>
@@ -25,6 +26,9 @@
       methods: {
         changeTitle: function (event) {
           this.description = event.target.value;
+        },
+        hello: function () {
+          return "Hello Fatih";
         },
       },
     });
